@@ -1,0 +1,11 @@
+<header class="header">
+    <div class="site-container">
+        <div class="logo">
+            Site Logo 
+        </div>
+        <div class="menu">
+            <a [routerLink]="routerConstant.counter" routerLinkActive="active">Counter App <span class="count">{{totalCounters$ | async}}</span></a>
+            <a [routerLink]="routerConstant.vatavaran" routerLinkActive="active">Weather App</a>
+        </div>
+    </div>
+</header>

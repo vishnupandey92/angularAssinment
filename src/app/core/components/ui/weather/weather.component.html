@@ -1,0 +1,38 @@
+@if (locationData) {
+<div class="title">
+    <h3>{{ locationData?.city?.name }}</h3>
+    <button (click)="onResetLocation(locationData?.city?.name)" class="normal">Refresh</button>
+</div>
+<div class="weather-details">
+    <div class="img-icon">
+        <img [src]="getImageIcon(locationData?.list[0]?.weather[0].icon)" alt="">
+    </div>
+    <div class="date">
+        <span>({{ locationData?.list[0].dt_txt | date:'medium'}})</span>
+    </div>
+    <div class="details">
+        <h5>Temperature <span>Max {{ locationData?.list[0]?.main.temp_max}} &deg;C Min {{
+                locationData?.list[0]?.main.temp_min}} &deg;C</span> </h5>
+        <h5>Sky <span>Max {{ locationData?.list[0]?.weather[0].main}}</span></h5>
+        <h5>Wind <span>Max {{ locationData?.list[0]?.wind.speed}}</span> </h5>
+        <h5>Pressure <span>{{ locationData?.list[0]?.main.pressure}}</span> </h5>
+    </div>
+</div>
+
+<div class="weekly-wrapper">
+    @for (item of locationData?.list; track $index;) {
+        @if ($index !== 0) {
+            <div class="daily-cards">
+                <h5>{{ item.dt_txt | date:'mediumDate'}}</h5>
+                <p>{{ item.dt_txt| date:'shortTime' }}</p>
+                <img [src]="getImageIcon(item.weather[0].icon)">
+                <h4>{{ item.main.temp_max }} &deg;C</h4>
+            </div>
+        }
+    }
+</div>
+} @else {
+<div class="no-data">
+    <h3>Please select the city for the details weather information</h3>
+</div>
+}

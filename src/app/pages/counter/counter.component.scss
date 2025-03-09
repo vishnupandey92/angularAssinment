@@ -1,0 +1,40 @@
+.counter-page{
+   .button-group{
+    display: flex;
+    gap: 10px;
+        button{
+            background-color: #eee;
+            padding: 8px 20px;
+            font: 400 1rem/1.5rem 'Poppins';
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        .danger{
+            background-color: #ff0057;
+            color: #fff;
+        }
+        .info{
+            background-color: #4834d4;
+            color: #fff;
+        }
+   } 
+   .counter-block{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 10px;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 8px;
+
+    .count{
+        padding: 0 10px ;
+    }
+   }
+}

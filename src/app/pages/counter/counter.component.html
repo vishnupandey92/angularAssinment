@@ -1,0 +1,16 @@
+<div class="counter-page">
+    <div class="button-group">
+        <button (click)="onReset()" >Reset</button>
+        <button class="info" (click)="onAddCounter()" >Add</button>
+    </div>
+    @for (counter of allCounters$ | async; track counter.id) {
+    <div class="counter-block">
+        <div class="count">Counter {{ counter.count }}</div>
+        <div class="button-group">
+            <button (click)="onIncrement(counter.id)">Increment</button>
+            <button class="info" (click)="onDecrement(counter.id)">Decrement</button>
+            <button class="danger" (click)="onDelete(counter.id)">Delete</button>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,98 @@
+.weather-wrapper{
+    display: flex;
+    gap: 10px;
+
+    .left-block{
+        width: 35%;
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        height: calc(100vh - 140px);
+        
+
+        .input-container{
+            display: flex;
+            gap: 10px;
+
+            input{
+                padding: 10px;
+                border: 1px solid #ff0057;
+                border-radius: 4px;
+                background-color: #eee;
+                outline: none;
+                width: 100%;
+            }
+            button{
+                background-color: #ff0057;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+        }
+
+        .clear{
+            background-color: #eee;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .list-container{
+            margin: 20px 0;
+
+            .list{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid #e0e0e0;
+                padding: 10px;
+                border-radius: 4px;
+                margin-bottom: 10px;
+
+                .list-name{
+                    width: 100%;
+                    cursor: pointer;
+                }
+
+                .list-actions{
+                    display: flex;
+                    gap: 10px;
+                    
+                    
+                    button{
+                        padding: 5px 10px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+
+                    .danger{
+                        background-color: #ff0057;
+                        color: #fff;
+                    }
+
+                    .normal{
+                            background-color: #eee;
+                            color: #000;
+                    }
+                }
+
+                &:hover{
+                    background-color: #e0e0e0;
+                }
+            }
+
+        }
+
+
+    }
+    .right-block{
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        width: 60%;
+    }
+}

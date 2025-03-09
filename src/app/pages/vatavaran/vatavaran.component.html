@@ -1,0 +1,28 @@
+<div class="weather-wrapper">
+    <div class="left-block">
+        <div class="input-container">
+            <input type="text" placeholder="Enter City Name" [(ngModel)]="cityName"
+                (keydown.enter)="loadLocations(cityName)">
+            <button (click)="loadLocations(cityName)">Add</button>
+        </div>
+        <div class="list-container">
+            @for (location of locations$ | async; track location.city.id) {
+            <div class="list">
+                <div class="list-name" (click)="getSelectedLocation(location.city.id)"> {{location.city.name}}</div>
+                <div class="list-actions">
+                    <button class="normal" (click)="onResetLocation(location.city.name)">Refresh</button>
+                    <button class="danger" (click)="onDeleteLocation(location.city.id)">Delete</button>
+                </div>
+            </div>
+            }
+        </div>
+        <button class="clear" (click)="onResetAllLocation()">Clear</button>
+    </div>
+    <div class="right-block">
+        <app-weather [locationData]="selectedLocation"></app-weather>
+    </div>
+</div>
+
+@if (loading$ |async) {
+<app-loader></app-loader>
+}
